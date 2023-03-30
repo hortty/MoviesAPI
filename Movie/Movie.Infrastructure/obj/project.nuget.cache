@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GQyEuKFSDVWrkVfDdiOHPtwTBeRo6Gf0PR34u2EVeoPcgo5W7zUYd7StW4ySlNMEyYn5etIvRzX4rJ0k1u5Alg==",
+  "dgSpecHash": "hN218vvLrrlWHMJsAM5yEGcQfCc2DpnMJ6ILxS1DZv2azc2B6p+aUovoVwaxTGdooFDHF3Jtg36j/TgfLRfTIQ==",
   "success": true,
   "projectFilePath": "C:\\Projetos_git\\MoviesAPI\\Movie\\Movie.Infrastructure\\Movie.Infrastructure.csproj",
   "expectedPackageFiles": [
