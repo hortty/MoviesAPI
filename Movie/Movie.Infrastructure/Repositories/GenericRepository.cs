@@ -64,7 +64,17 @@ namespace Movie.Infrastructure.Repositories
 
         public async Task<TEntity> Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            var foundEntity = await ListById(entity);
+
+            if(foundEntity == null)
+            {
+                throw new InvalidOperationException($"Entity not found.");
+            }
+
+            var updatedEntity = _dbSet.Update(foundEntity);
+            await _dbContext.SaveChangesAsync();
+
+            return updatedEntity.Entity;
         }
     }
 }
