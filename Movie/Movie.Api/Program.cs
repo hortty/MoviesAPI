@@ -1,5 +1,10 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Movie.Application.Mappings;
+using Movie.Application.Services;
+using Movie.Domain.Interfaces;
 using Movie.Infrastructure.Context;
+using Movie.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +15,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var config = new MapperConfiguration(cfg => {
+    
+    cfg.AddMaps("Movie.Domain");
+});
+
+var mapper = config.CreateMapper();
+
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+builder.Services.AddSingleton(mapper);
+
+builder.Services.AddScoped<IFilmService, FilmService>();
+builder.Services.AddScoped<IFilmRepository, FilmRepository>();
 
 var app = builder.Build();
 
@@ -22,7 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

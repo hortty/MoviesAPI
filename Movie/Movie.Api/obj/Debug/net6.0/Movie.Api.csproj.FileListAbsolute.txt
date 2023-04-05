@@ -78,11 +78,5 @@ C:\Projetos_git\MoviesAPI\Movie\Movie.Api\obj\Debug\net6.0\refint\Movie.Api.dll
 C:\Projetos_git\MoviesAPI\Movie\Movie.Api\obj\Debug\net6.0\Movie.Api.pdb
 C:\Projetos_git\MoviesAPI\Movie\Movie.Api\obj\Debug\net6.0\Movie.Api.genruntimeconfig.cache
 C:\Projetos_git\MoviesAPI\Movie\Movie.Api\obj\Debug\net6.0\ref\Movie.Api.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\Humanizer.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\System.CodeDom.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\System.Text.Json.dll
-C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

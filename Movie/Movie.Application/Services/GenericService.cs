@@ -1,4 +1,5 @@
-﻿using Movie.Domain.Interfaces;
+﻿using AutoMapper;
+using Movie.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,34 +13,74 @@ namespace Movie.Application.Services
         where TRepository : IGenericRepository<TEntity>
     {
         private readonly TRepository _repository;
-        public GenericService(TRepository repository)
+        private readonly IMapper _mapper;
+
+        public GenericService(TRepository repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
 
-        public Task<TOutputDto> Create<TInputDto, TOutputDto>(TInputDto entity)
+        public async Task<TOutputDto> Create<TInputDto, TOutputDto>(TInputDto inputDto) 
+        where TInputDto : class 
+        where TOutputDto : class
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<TEntity>(inputDto);
+
+            var createdEntity = await _repository.Create(entity);
+
+            var outputDto = _mapper.Map<TOutputDto>(createdEntity);
+
+            return outputDto;
         }
 
-        public Task<TOutputDto> Delete<TInputDto, TOutputDto>(TInputDto entity)
+        public async Task<TOutputDto> Delete<TInputDto, TOutputDto>(TInputDto inputDto)
+        where TInputDto : class 
+        where TOutputDto : class
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<TEntity>(inputDto);
+
+            var deletedEntity = await _repository.Delete(entity);
+
+            var outputDto = _mapper.Map<TOutputDto>(deletedEntity);
+
+            return outputDto;
         }
 
-        public Task<IEnumerable<TOutputDto>> ListAll<TOutputDto>()
+        public async Task<IEnumerable<TOutputDto>> ListAll<TOutputDto>()
+        where TOutputDto : class
         {
-            throw new NotImplementedException();
+            var entitiesList = await _repository.ListAll();
+
+            var outputDto = _mapper.Map<IEnumerable<TOutputDto>>(entitiesList);
+
+            return outputDto;
         }
 
-        public Task<TOutputDto> ListById<TInputDto, TOutputDto>(TInputDto entity)
+        public async Task<TOutputDto> ListById<TInputDto, TOutputDto>(TInputDto inputDto)
+        where TInputDto : class 
+        where TOutputDto : class
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<TEntity>(inputDto);
+
+            var foundEntity = await _repository.ListById(entity);
+
+            var outputDto = _mapper.Map<TOutputDto>(foundEntity);
+
+            return outputDto;
         }
 
-        public Task<TOutputDto> Update<TInputDto, TOutputDto>(TInputDto entity)
+        public async Task<TOutputDto> Update<TInputDto, TOutputDto>(TInputDto inputDto)
+        where TInputDto : class 
+        where TOutputDto : class
         {
-            throw new NotImplementedException();
+            var entity = _mapper.Map<TEntity>(inputDto);
+
+            var updatedEntity = await _repository.Update(entity);
+
+            var outputDto = _mapper.Map<TOutputDto>(updatedEntity);
+
+            return outputDto;
         }
     }
 }

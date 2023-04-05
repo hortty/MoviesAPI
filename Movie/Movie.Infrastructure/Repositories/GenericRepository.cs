@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Movie.Domain.Interfaces;
+using Movie.Domain.Models;
 using Movie.Infrastructure.Context;
 using System;
 using System.Collections.Generic;
@@ -54,9 +55,15 @@ namespace Movie.Infrastructure.Repositories
 
         public async Task<TEntity> ListById(TEntity entity)
         {
-            var foundEntity = await _dbSet.FindAsync(entity);
+            var idProperty = typeof(TEntity).GetProperty("Id");
+            long entityId = 0L;
 
-            if (entity == null)
+            if(idProperty != null)
+                entityId = (long)idProperty.GetValue(entity, null);
+
+            var foundEntity = await _dbSet.FindAsync(entityId);
+
+            if (foundEntity == null)
                 throw new InvalidOperationException($"Entity not found.");
             
             return foundEntity;
