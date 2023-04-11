@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Movie.Domain.Models;
 
 namespace Movie.Domain.Interfaces
 {
-    public interface IGenericRepository<TEntity> where TEntity : class
+    public interface IGenericRepository<TEntity> where TEntity : EntityBase
     {
         public Task<TEntity> Create(TEntity entity);
 

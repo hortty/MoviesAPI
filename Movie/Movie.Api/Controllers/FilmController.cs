@@ -23,6 +23,12 @@ namespace Movie.Api.Controllers
             return Ok(await _filmService.ListById<GetFilmDto, FoundFilmDto>(getFilmDto));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _filmService.ListAll<FoundFilmDto>());
+        }
+
         [HttpDelete]
         [Route("{Id}")]
         public async Task<IActionResult> Remove([FromRoute] DeleteFilmDto deleteFilmDto)
@@ -31,9 +37,17 @@ namespace Movie.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete([FromBody] CreateFilmDto createFilmDto)
+        public async Task<IActionResult> Create([FromBody] CreateFilmDto createFilmDto)
         {
             return Ok(await _filmService.Create<CreateFilmDto, CreatedFilmDto>(createFilmDto));
+        }
+
+        [HttpPut]
+        [Route("{Id}")]
+        public async Task<IActionResult> Update([FromRoute] long Id, [FromBody] UpdateFilmDto updateFilmDto)
+        {
+            updateFilmDto.Id = Id;
+            return Ok(await _filmService.Update<UpdateFilmDto, UpdatedFilmDto>(updateFilmDto));
         }
     }
 }

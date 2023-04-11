@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Movie.Domain.Models
 {
-    public class Customer
+    public class Customer : EntityBase
     {
-        public long Id { get; set; }
-
         public string Name { get; set; } = String.Empty;
 
         public string Phone { get; set; } = String.Empty;

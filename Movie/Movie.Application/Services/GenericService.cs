@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Movie.Domain.Interfaces;
+using Movie.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace Movie.Application.Services
 {
     public class GenericService<TEntity, TRepository> : IGenericService
-        where TEntity : class
+        where TEntity : EntityBase
         where TRepository : IGenericRepository<TEntity>
     {
         private readonly TRepository _repository;

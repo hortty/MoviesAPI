@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Movie.Domain.Models
 {
-    public class ShoppingCartMovie
+    public class ShoppingCartMovie : EntityBase
     {
-        public int Id { get; set; }
-
         public long Amount { get; set; }
 
         public long ShoppingCartId { get; set; }

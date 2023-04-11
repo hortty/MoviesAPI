@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Movie.Infrastructure.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : EntityBase
     {
         private readonly DataContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
@@ -34,7 +34,7 @@ namespace Movie.Infrastructure.Repositories
         {
             var foundEntity = await ListById(entity);
 
-            if(foundEntity == null)
+            if (foundEntity == null)
                 throw new InvalidOperationException($"Entity not found.");
 
             var removedEntity = _dbSet.Remove(foundEntity);
@@ -45,9 +45,9 @@ namespace Movie.Infrastructure.Repositories
 
         public async Task<IEnumerable<TEntity>> ListAll()
         {
-            var foundEntities = await _dbSet.AsNoTracking().ToListAsync();
+            var foundEntities = await _dbSet.AsNoTracking().Skip(0).Take(10).ToListAsync();
 
-            if(foundEntities.Equals(null))
+            if (foundEntities.Equals(null))
                 throw new InvalidOperationException($"Entities not found.");
 
             return foundEntities;
@@ -55,33 +55,31 @@ namespace Movie.Infrastructure.Repositories
 
         public async Task<TEntity> ListById(TEntity entity)
         {
-            var idProperty = typeof(TEntity).GetProperty("Id");
-            long entityId = 0L;
-
-            if(idProperty != null)
-                entityId = (long)idProperty.GetValue(entity, null);
-
-            var foundEntity = await _dbSet.FindAsync(entityId);
+            var foundEntity = await _dbSet.FindAsync(entity.Id);
 
             if (foundEntity == null)
                 throw new InvalidOperationException($"Entity not found.");
-            
+
             return foundEntity;
         }
 
         public async Task<TEntity> Update(TEntity entity)
         {
-            var foundEntity = await ListById(entity);
+            var foundEntity = await _dbSet.FindAsync(entity.Id);
 
-            if(foundEntity == null)
+            if (foundEntity == null)
             {
                 throw new InvalidOperationException($"Entity not found.");
             }
+            else
+            {
+                _dbContext.Entry(foundEntity).State = EntityState.Detached;
+            }
 
-            var updatedEntity = _dbSet.Update(foundEntity);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.Entry(entity).State = EntityState.Modified;
+            _dbContext.SaveChanges();
 
-            return updatedEntity.Entity;
+            return entity;
         }
     }
 }
