@@ -1,0 +1,19 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.651);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  gap: 2rem;
+}
+
+.icon-list {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.link-item {
+  color: white;
+}
