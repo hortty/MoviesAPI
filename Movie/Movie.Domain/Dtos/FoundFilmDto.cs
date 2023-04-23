@@ -20,5 +20,7 @@ namespace Movie.Domain.Dtos
         public decimal Price { get; set; }
 
         public long Amount { get; set; }
+
+        public byte[]? Imagem { get; set; }
     }
 }

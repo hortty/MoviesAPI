@@ -12,5 +12,7 @@ namespace Movie.Domain.Dtos
     public class GetFilmDto
     {
         public long Id { get; set; }
+
+        public string Name { get; set; } = String.Empty;
     }
 }

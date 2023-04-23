@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="text-center mb-4">Carrinho de compras</h1>
+  <div *ngIf="cartItems.length === 0" class="text-center mb-4">
+    <h3>Seu carrinho está vazio</h3>
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <table class="table table-bordered table-hover mb-4">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems">
+          <td>{{ item.name }}</td>
+          <td>{{ item.price | currency }}</td>
+          <td>{{ item.amount }}</td>
+          <td>{{ item.amount * item.price | currency }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" class="text-right">Total:</td>
+          <td>{{ getTotal() | currency }}</td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="text-right">
+      <button type="button" class="btn btn-danger" (click)="clearCart()">Limpar carrinho</button>
+      <button type="button" class="btn btn-primary ml-2" (click)="checkout()">Finalizar compra</button>
+    </div>
+  </div>
+</div>

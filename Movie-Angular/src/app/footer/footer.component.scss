@@ -1,5 +1,7 @@
+@import '../../styles.scss';
+
 .footer {
-  background-color: rgba(0, 0, 0, 0.651);
+  background-color: $main-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,5 +17,7 @@
 }
 
 .link-item {
-  color: white;
+  color: $white-color;
+  text-decoration: none;
+  font-size: large;
 }

@@ -48,7 +48,7 @@ namespace Movie.Application.Services
             return outputDto;
         }
 
-        public async Task<IEnumerable<TOutputDto>> ListAll<TOutputDto>()
+        public virtual async Task<IEnumerable<TOutputDto>> ListAll<TOutputDto>()
         where TOutputDto : class
         {
             var entitiesList = await _repository.ListAll();

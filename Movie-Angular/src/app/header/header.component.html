@@ -1,17 +1,27 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <img src="assets/logo.png" alt="image-logo" class="image-logo">
+    <img src="assets/logo3.png" alt="image-logo" class="image-logo">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse navbar-global-itens" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active list-itens" aria-current="page">Home</a>
-          <a class="nav-link list-itens">Shopping Cart</a>
+          <a class="nav-link active list-itens" aria-current="page" routerLink="home">Home</a>
+          <a class="nav-link list-itens" routerLink="shopping">Shopping Cart</a>
         </div>
-        <div>
-          <img src="assets/account-25.png" alt="image-user" class="image-user">
-          <button mat-raised-button class="login-button">Login</button>
+
+        <form class="example-form">
+          <mat-form-field appearance="outline">
+            <mat-label>Movie:</mat-label>
+            <input matInput placeholder="Example: Titanic" [formControl]="movieName">
+          </mat-form-field>
+        </form>
+
+
+
+        <div class="icon-animation" routerLink="login">
+            <img src="assets/icone3.png" alt="image-user" class="image-user">
+          <a class="login-item">Sign in</a>
           <!-- <span class="login-item">Please, login</span> -->
         </div>
     </div>

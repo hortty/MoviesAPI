@@ -1,9 +1,20 @@
 <div class="footer">
-  <a href="#" class="link-item">About Movie.com</a>
+  <a class="link-item" (click)="openDialog()">About PopcornMovies.com</a>
   <div class="icon-list">
-    <mat-icon>help</mat-icon>
-    <mat-icon>android</mat-icon>
-    <mat-icon>explore</mat-icon>
-    <mat-icon>language</mat-icon>
+    <a href="https://www.instagram.com/" class="link-item" target="_blank">
+    <fa-icon style="font-size: 25px;" [icon]="faInstagram" href="www.youtube.com"></fa-icon>
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" class="link-item">
+    <fa-icon style="font-size: 25px;" [icon]="faFacebook"></fa-icon>
+    </a>
+
+    <a href="https://www.twitter.com/" target="_blank" class="link-item">
+    <fa-icon style="font-size: 25px;" [icon]="faTwitter"></fa-icon>
+    </a>
+
+    <a href="https://www.youtube.com/" target="_blank" class="link-item">
+      <fa-icon [icon]="faYoutube" style="font-size: 25px;"></fa-icon>
+    </a>
   </div>
 </div>

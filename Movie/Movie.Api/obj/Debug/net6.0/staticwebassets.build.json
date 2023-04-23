@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "j7Iq9j/1VrpCeAEDDEqp7/9BArMhV+clU6wf0Ev9OKA=",
+  "Hash": "ZVBZQlPtlq8YKRr4X8o3If0jFTwSxi7mq3hl1XR6xcE=",
   "Source": "Movie.Api",
   "BasePath": "_content/Movie.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Movie.Api\\wwwroot",
+      "Source": "Movie.Api",
+      "ContentRoot": "C:\\Projetos_git\\MoviesAPI\\Movie\\Movie.Api\\wwwroot\\",
+      "BasePath": "_content/Movie.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Projetos_git\\MoviesAPI\\Movie\\Movie.Api\\wwwroot\\Pictures\\donniedarko.jpg",
+      "SourceId": "Movie.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Projetos_git\\MoviesAPI\\Movie\\Movie.Api\\wwwroot\\",
+      "BasePath": "_content/Movie.Api",
+      "RelativePath": "Pictures/donniedarko.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pictures\\donniedarko.jpg"
+    }
+  ]
 }

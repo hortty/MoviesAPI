@@ -1,0 +1,30 @@
+
+body {
+  background-color: #9c27b0;
+  color: #ffffff;
+}
+
+.form-group label {
+  color: #ffffff;
+}
+
+.form-control {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-primary {
+  background-color: #6f1080;
+  border-color: #581464;
+  color: #ffffff;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #3e0a55;
+  border-color: #1f0729;
+  color: #ffffff;
+}
+
+* {
+  margin: 5px;
+}

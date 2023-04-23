@@ -8,6 +8,6 @@ namespace Movie.Domain.Interfaces
 {
     public interface IFilmRepository : IGenericRepository<Film>
     {
-        
+        public IQueryable<Film> GetByName(Film film);
     }
 }

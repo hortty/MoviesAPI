@@ -1,3 +1,6 @@
+$main-color: #9c27b0;
+$secondary-color: #69f0ae;
+$white-color: #ffffff;
 
 ::-webkit-scrollbar {
   width: 0.4rem;
@@ -5,6 +8,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.37);
+  background-color: $main-color;
   border-radius: 5rem;
 }
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

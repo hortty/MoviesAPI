@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .image-logo {
   max-width: 4rem;
   max-height: 4rem;
@@ -6,13 +8,17 @@
   margin-right: 2rem;
 }
 
+.image-logo:hover {
+  animation: spinY 0.8s linear forwards;
+}
+
 .navbar {
-  background-color: rgba(0, 0, 0, 0.651);
+  background-color: $main-color;
 }
 
 .list-itens {
   text-decoration: none;
-  color: white !important;
+  color: $white-color !important;
   padding: 1.4rem;
   transform: 2ms ease-in;
   position: relative;
@@ -26,7 +32,7 @@
   left: 0px;
   width: 0px;
   height: 1px;
-  background-color:white;
+  background-color:$white-color;
   transition: all 1s ease;
 }
 
@@ -34,9 +40,18 @@
   width: 100%;
 }
 
+mat-form-field {
+  color: $white-color;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  min-width: 35rem;
+}
+
 .navbar-global-itens {
   display: flex !important;
   justify-content: space-between !important;
+  align-items: center;
+
 }
 
 .user-account-item {
@@ -51,6 +66,61 @@
   margin-right: 0.7rem;
 }
 
-.login-button {
-  background-color: rgb(255, 255, 255);
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.login-item {
+  color: $white-color;
+  text-decoration: none;
+}
+
+.image-user {
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease-out;
+  max-width: 2rem;
+  max-height: 2rem;
+  border-radius: 100%;
+  margin-right: 0.7rem;
+}
+
+.image-user:hover {
+  animation: spin 0.7s linear forwards;
+}
+
+.icon-animation:hover {
+  cursor: pointer;
+  animation: jump 0.5s;
+}
+
+@keyframes spinY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jump {
+  50% {
+    transform: translateY(-10px);
+  }
 }
