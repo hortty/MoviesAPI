@@ -4,9 +4,10 @@ import { CustomerService } from '../services/customer.service';
 
 export class Account {
   name: string;
-  username: string;
-  email: string;
-  password: string;
+  phone: string;
+  address: string;
+  age: number;
+  userId: number;
 }
 
 @Component({
@@ -19,9 +20,9 @@ export class CreateAccountComponent implements OnInit {
   account: Account;
   formErrors = {
     'name': '',
-    'username': '',
-    'email': '',
-    'password': ''
+    'phone': '',
+    'address': '',
+    'age': ''
   };
 
   constructor(private formBuilder: FormBuilder, private customerService: CustomerService) {}
@@ -33,9 +34,9 @@ export class CreateAccountComponent implements OnInit {
   createForm() {
     this.accountForm = this.formBuilder.group({
       name: ['', Validators.required],
-      username: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      phone: ['', Validators.required],
+      address: ['', Validators.required],
+      age: ['', Validators.required]
     });
     this.accountForm.valueChanges.subscribe(data => this.onValueChanged(data));
   }
@@ -61,20 +62,21 @@ export class CreateAccountComponent implements OnInit {
     'name': {
       'required': 'Name is required.'
     },
-    'username': {
-      'required': 'Username is required.'
+    'phone': {
+      'required': 'phone is required.'
     },
-    'email': {
-      'required': 'Email is required.',
-      'email': 'Email must be valid.'
+    'address': {
+      'required': 'address is required.',
     },
-    'password': {
-      'required': 'Password is required.'
+    'age': {
+      'required': 'age is required.'
     }
   };
 
   createAccount() {
     this.account = this.accountForm.value;
+    this.account.userId = 1;
+
     if(this.accountForm.valid)
     {
       this.customerService.createAccount(this.account).subscribe( x => console.log(x));

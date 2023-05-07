@@ -9,28 +9,27 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="username">User</label>
-        <input type="text" class="form-control" id="username" formControlName="username" [class.is-invalid]="accountForm.get('username').invalid && (accountForm.get('username').dirty || accountForm.get('username').touched)" required>
-        <div *ngIf="accountForm.get('username').invalid && (accountForm.get('username').dirty || accountForm.get('username').touched)" class="invalid-feedback">
-          <div *ngIf="accountForm.get('username').errors['required']">Username is required</div>
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone" [class.is-invalid]="accountForm.get('phone').invalid && (accountForm.get('phone').dirty || accountForm.get('phone').touched)" required>
+        <div *ngIf="accountForm.get('phone').invalid && (accountForm.get('phone').dirty || accountForm.get('phone').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('phone').errors['required']">phone is required</div>
         </div>
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="accountForm.get('email').invalid && (accountForm.get('email').dirty || accountForm.get('email').touched)" required>
-        <div *ngIf="accountForm.get('email').invalid && (accountForm.get('email').dirty || accountForm.get('email').touched)" class="invalid-feedback">
-          <div *ngIf="accountForm.get('email').errors['required']">Email is required</div>
-          <div *ngIf="accountForm.get('email').errors['email']">Invalid email format</div>
+        <label for="address">Address</label>
+        <input type="address" class="form-control" id="address" formControlName="address" [class.is-invalid]="accountForm.get('address').invalid && (accountForm.get('address').dirty || accountForm.get('address').touched)" required>
+        <div *ngIf="accountForm.get('address').invalid && (accountForm.get('address').dirty || accountForm.get('address').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('address').errors['required']">address is required</div>
         </div>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" formControlName="password" [class.is-invalid]="accountForm.get('password').invalid && (accountForm.get('password').dirty || accountForm.get('password').touched)" required>
-        <div *ngIf="accountForm.get('password').invalid && (accountForm.get('password').dirty || accountForm.get('password').touched)" class="invalid-feedback">
-          <div *ngIf="accountForm.get('password').errors['required']">Password is required</div>
+        <label for="age">Age</label>
+        <input type="age" class="form-control" id="age" formControlName="age" [class.is-invalid]="accountForm.get('age').invalid && (accountForm.get('age').dirty || accountForm.get('age').touched)" required>
+        <div *ngIf="accountForm.get('age').invalid && (accountForm.get('age').dirty || accountForm.get('age').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('age').errors['required']">age is required</div>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button type="submit" class="btn btn-primary">Create Customer</button>
     </div>
   </form>
 </div>

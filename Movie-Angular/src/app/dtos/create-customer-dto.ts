@@ -1,6 +1,7 @@
 export class CreateCustomerDto {
   name: string;
-  username: string;
-  email: string;
-  password: string;
+  phone: string;
+  address: string;
+  age: number;
+  userId: number;
 }
