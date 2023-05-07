@@ -36,13 +36,13 @@ export class FilmService {
     return this.http.get<FoundFilmDto[]>(`https://localhost:7294/Film/`);
   }
 
-  update(dto: UpdateFilmDto): Observable<UpdatedFilmDto> {
-    return this.http.put<UpdatedFilmDto>(`https://localhost:7294/Film/${dto.id}`, dto);
-  }
+  // update(dto: UpdateFilmDto): Observable<UpdatedFilmDto> {
+  //   return this.http.put<UpdatedFilmDto>(`https://localhost:7294/Film/${dto.id}`, dto);
+  // }
 
-  delete(dto: DeleteFilmDto): Observable<DeletedFilmDto> {
-    return this.http.delete<DeletedFilmDto>(`https://localhost:7294/Film/${dto.id}`);
-  }
+  // delete(dto: DeleteFilmDto): Observable<DeletedFilmDto> {
+  //   return this.http.delete<DeletedFilmDto>(`https://localhost:7294/Film/${dto.id}`);
+  // }
 
   // create(dto: CreateFilmDto): Observable<any> {
   //   return this.http.post<CreatedFilmDto>(`https://localhost:7294/Film/`, dto);

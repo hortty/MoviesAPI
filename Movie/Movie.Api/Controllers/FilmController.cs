@@ -36,12 +36,12 @@ namespace Movie.Api.Controllers
             return Ok(await _filmService.ListAll<FoundFilmDto>());
         }
 
-        [HttpDelete]
-        [Route("{Id}")]
-        public async Task<IActionResult> Remove([FromRoute] DeleteFilmDto deleteFilmDto)
-        {
-            return Ok(await _filmService.Delete<DeleteFilmDto, DeletedFilmDto>(deleteFilmDto));
-        }
+        // [HttpDelete]
+        // [Route("{Id}")]
+        // public async Task<IActionResult> Remove([FromRoute] DeleteFilmDto deleteFilmDto)
+        // {
+        //     return Ok(await _filmService.Delete<DeleteFilmDto, DeletedFilmDto>(deleteFilmDto));
+        // }
 
         // [HttpPost]
         // public async Task<IActionResult> Create([FromBody] CreateFilmDto createFilmDto)
@@ -49,12 +49,12 @@ namespace Movie.Api.Controllers
         //     return Ok(await _filmService.Create<CreateFilmDto, CreatedFilmDto>(createFilmDto));
         // }
 
-        [HttpPut]
-        [Route("{Id}")]
-        public async Task<IActionResult> Update([FromRoute] long Id, [FromBody] UpdateFilmDto updateFilmDto)
-        {
-            updateFilmDto.Id = Id;
-            return Ok(await _filmService.Update<UpdateFilmDto, UpdatedFilmDto>(updateFilmDto));
-        }
+        // [HttpPut]
+        // [Route("{Id}")]
+        // public async Task<IActionResult> Update([FromRoute] long Id, [FromBody] UpdateFilmDto updateFilmDto)
+        // {
+        //     updateFilmDto.Id = Id;
+        //     return Ok(await _filmService.Update<UpdateFilmDto, UpdatedFilmDto>(updateFilmDto));
+        // }
     }
 }

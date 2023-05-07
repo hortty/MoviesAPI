@@ -18,15 +18,7 @@ export class FooterComponent {
   faTwitter = faTwitter;
   faYoutube = faYoutube;
 
-  data = `PopcornMovies é um site que atende a milhões de usuários no mundo todo. Com uma ampla seleção de filmes de diversas categorias, é um dos sites mais bem avaliados
-  do mercado e possui conteúdos de extrema qualidade, todos em FullHD. Desde filmes clássicos até os mais recentes lançamentos, PopcornMovies oferece uma experiência de entretenimento
-  incrível para seus usuários.
-
-  Com uma interface fácil de usar e uma navegação intuitiva, os usuários podem facilmente encontrar seus filmes favoritos e assistir em alta definição. Além disso, o site também
-  oferece recursos adicionais, como trailers, sinopses e classificações de usuários, para ajudar os usuários a tomar uma decisão informada sobre o que assistir.
-
-  PopcornMovies está sempre adicionando novos filmes para manter seus usuários atualizados com os últimos lançamentos e clássicos cult. Além disso, a equipe de curadoria do site
-  está sempre atenta para garantir que todos os filmes possuam uma qualidade de imagem e som excepcionais.`;
+  data = `PopcornMovies is a website that serves millions of users worldwide. With a wide selection of movies from various categories, it is one of the most highly rated sites on the market and offers extremely high-quality content, all in FullHD. From classic films to the latest releases, PopcornMovies offers an amazing entertainment experience for its users. With an easy-to-use interface and intuitive navigation, users can easily find their favorite movies and watch them in high definition. Additionally, the site also offers additional features such as trailers, synopses, and user ratings to help users make an informed decision about what to watch. PopcornMovies is always adding new movies to keep its users up to date with the latest releases and cult classics. Moreover, the site's curation team is always vigilant to ensure that all movies have exceptional image and sound quality.`;
 
   constructor(private dialog: MatDialog) {}
 

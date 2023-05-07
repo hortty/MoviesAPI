@@ -80,3 +80,6 @@ C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\AutoMapper.Extensions
 C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\Movie.Api.staticwebassets.runtime.json
 C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\FluentValidation.dll
+C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Projetos_git\MoviesAPI\Movie\Movie.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

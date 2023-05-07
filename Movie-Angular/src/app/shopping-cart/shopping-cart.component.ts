@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartMovieService } from '../services/shopping-cart-movie.service';
 import { GlobalService } from '../services/global-service.service';
+import { FoundShoppingCartMovieDto } from '../dtos/found-shopping-cart-movie-dto';
+import { UpdateShoppingCartMovieDto } from '../dtos/update-shopping-cart-movie-dto';
+import { DeleteShoppingCartMovieDto } from '../dtos/delete-shopping-cart-movie-dto';
 
 interface CartItem {
   name: string;
@@ -18,22 +21,20 @@ interface CartItem {
 })
 export class ShoppingCartComponent implements OnInit {
 
-  cartItems: CartItem[] = [
-    { name: 'Produto 1', price: 10, amount: 2 },
-    { name: 'Produto 2', price: 5, amount: 1 },
-    { name: 'Produto 3', price: 10.99, amount: 3 }
-  ];
+  cartItems: FoundShoppingCartMovieDto[] = [];
+  loading: boolean = true;
 
   constructor(private shoppingCartMovieService: ShoppingCartMovieService, private globalService: GlobalService) { }
 
   ngOnInit(): void {
-    if(this.globalService.shoppingCartMovies.length > 0) {
-      this.cartItems = [...this.globalService.shoppingCartMovies];
-      this.cartItems.map( x => {x.amount = 1})
-    }
-    console.log(this.cartItems);
-  }
+    this.loading = true;
 
+    this.shoppingCartMovieService.get().subscribe(items => {
+      this.cartItems = items;
+      console.log(this.cartItems);
+    }, (error) => this.loading = false, () => this.loading = false);
+
+  }
 
   getTotal(): number {
     return this.cartItems.reduce((total, item) => total + (item.price * item.amount), 0);
@@ -41,10 +42,35 @@ export class ShoppingCartComponent implements OnInit {
 
   clearCart(): void {
     this.cartItems = [];
-    this.globalService.shoppingCartMovies = [];
   }
 
   checkout(): void {
     console.log("Compra finalizada!");
   }
+
+  addItem(item: FoundShoppingCartMovieDto): void {
+    const index = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
+    item.amount++;
+
+    const updateShoppingCartMovieDto: UpdateShoppingCartMovieDto = {...item};
+
+    this.shoppingCartMovieService.update(updateShoppingCartMovieDto).subscribe(updatedItem => {
+      this.cartItems[index] = updatedItem;
+      console.log(updatedItem);
+    }, (error) => this.loading = false, () => this.loading = false);
+  }
+
+  deleteItem(id: number): void {
+
+    const index = this.cartItems.findIndex(cartItem => cartItem.id === id);
+
+    const deleteShoppingCartMovieDto: DeleteShoppingCartMovieDto = {id: id};
+
+    this.shoppingCartMovieService.delete(deleteShoppingCartMovieDto).subscribe(deletedItem => {
+      this.cartItems.splice(index, 1);
+      console.log(deletedItem);
+    }, (error) => this.loading = false, () => this.loading = false);
+
+  }
+
 }

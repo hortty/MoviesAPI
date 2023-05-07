@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <div class="row row-cols-4">
+  <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2">
 
     <div class="grid-container" *ngFor="let filme of filmes; let index = index">
       <div class="grid-item">
@@ -9,15 +9,11 @@
           <div class="card-content">
             <h5 class="card-title">{{ filme.name }}</h5>
             <p class="card-text">{{ filme.description }}</p>
-            <p class="card-text" style="border-top: 0.1rem solid black; padding-top: 0.5rem;">Price: R$ {{ filme.price.toFixed(2) }}</p>
+            <p class="card-text" style="border-top: 0.1rem solid black; padding-top: 0.5rem;">$ {{ filme.price.toFixed(2) }}</p>
           </div>
         </div>
       </div>
       <button mat-raised-button color="primary" class="buy-button-item" style="max-width: 30rem;" (click)="comprar(filme)">Buy</button>
     </div>
-
-    <!-- <img [src]="imagemSrc"> -->
-
-
   </div>
 </div>

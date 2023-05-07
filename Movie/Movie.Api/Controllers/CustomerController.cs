@@ -31,12 +31,12 @@ namespace Movie.Api.Controllers
             return Ok(await _customerService.ListAll<FoundCustomerDto>());
         }
 
-        [HttpDelete]
-        [Route("{Id}")]
-        public async Task<IActionResult> Remove([FromRoute] DeleteCustomerDto deleteCustomerDto)
-        {
-            return Ok(await _customerService.Delete<DeleteCustomerDto, DeletedCustomerDto>(deleteCustomerDto));
-        }
+        // [HttpDelete]
+        // [Route("{Id}")]
+        // public async Task<IActionResult> Remove([FromRoute] DeleteCustomerDto deleteCustomerDto)
+        // {
+        //     return Ok(await _customerService.Delete<DeleteCustomerDto, DeletedCustomerDto>(deleteCustomerDto));
+        // }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateCustomerDto createCustomerDto)
@@ -44,12 +44,12 @@ namespace Movie.Api.Controllers
             return Ok(await _customerService.Create<CreateCustomerDto, CreatedCustomerDto>(createCustomerDto));
         }
 
-        [HttpPut]
-        [Route("{Id}")]
-        public async Task<IActionResult> Update([FromRoute] long Id, [FromBody] UpdateCustomerDto updateCustomerDto)
-        {
-            updateCustomerDto.Id = Id;
-            return Ok(await _customerService.Update<UpdateCustomerDto, UpdatedCustomerDto>(updateCustomerDto));
-        }
+        // [HttpPut]
+        // [Route("{Id}")]
+        // public async Task<IActionResult> Update([FromRoute] long Id, [FromBody] UpdateCustomerDto updateCustomerDto)
+        // {
+        //     updateCustomerDto.Id = Id;
+        //     return Ok(await _customerService.Update<UpdateCustomerDto, UpdatedCustomerDto>(updateCustomerDto));
+        // }
     }
 }

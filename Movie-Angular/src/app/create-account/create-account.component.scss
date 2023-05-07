@@ -28,3 +28,36 @@ body {
 * {
   margin: 5px;
 }
+
+.form-container {
+  max-width: 600px;
+  margin: 15rem;
+  background-color: #9c27b0;
+  border-radius: 30px;
+  padding: 1rem;
+  padding-right: 2rem;
+  padding-right: 2rem;
+}
+
+.items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 15rem;
+  background-color: #9c27b0;
+  border-radius: 30px;
+  padding: 1rem;
+  padding-right: 2rem;
+  padding-right: 2rem;
+}
+
+.align-items {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}

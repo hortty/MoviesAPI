@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8Xcd+hT6HUYrCTJyhyqa2fWE6VKwCaMYG7Q9A4nwfAh/Du5VQ9H6n5YZVZ6kjNn4ifC+oHXY2wtL1bUJDvyaWg==",
+  "dgSpecHash": "EIpesi8dEL7UMvJD8+nTFpMFxTV2j645Y1LDEXEug9FX9HovXnyGB11T0BXbSWp7KfYgrJLMoiif/1jkuDx2qA==",
   "success": true,
   "projectFilePath": "C:\\Projetos_git\\MoviesAPI\\Movie\\Movie.Application\\Movie.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

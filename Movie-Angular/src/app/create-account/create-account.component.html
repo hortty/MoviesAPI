@@ -1,21 +1,36 @@
-<form (ngSubmit)="createAccount()" #createAccountForm="ngForm" style="max-width: 300px; margin: 15rem; background-color: #9c27b0; border-radius: 30px;">
-  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <div class="form-group" >
-      <label for="name">Nome</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="account.name" name="name" required>
+<div class="align-items">
+  <form (ngSubmit)="createAccount()" [formGroup]="accountForm" class="form-container">
+    <div class="items-container">
+      <div class="form-group" >
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" [class.is-invalid]="accountForm.get('name').invalid && (accountForm.get('name').dirty || accountForm.get('name').touched)" required>
+        <div *ngIf="accountForm.get('name').invalid && (accountForm.get('name').dirty || accountForm.get('name').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('name').errors['required']">Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">User</label>
+        <input type="text" class="form-control" id="username" formControlName="username" [class.is-invalid]="accountForm.get('username').invalid && (accountForm.get('username').dirty || accountForm.get('username').touched)" required>
+        <div *ngIf="accountForm.get('username').invalid && (accountForm.get('username').dirty || accountForm.get('username').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('username').errors['required']">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="accountForm.get('email').invalid && (accountForm.get('email').dirty || accountForm.get('email').touched)" required>
+        <div *ngIf="accountForm.get('email').invalid && (accountForm.get('email').dirty || accountForm.get('email').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('email').errors['required']">Email is required</div>
+          <div *ngIf="accountForm.get('email').errors['email']">Invalid email format</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" [class.is-invalid]="accountForm.get('password').invalid && (accountForm.get('password').dirty || accountForm.get('password').touched)" required>
+        <div *ngIf="accountForm.get('password').invalid && (accountForm.get('password').dirty || accountForm.get('password').touched)" class="invalid-feedback">
+          <div *ngIf="accountForm.get('password').errors['required']">Password is required</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
     </div>
-    <div class="form-group">
-      <label for="username">Usuário</label>
-      <input type="text" class="form-control" id="username" [(ngModel)]="account.username" name="username" required>
-    </div>
-    <div class="form-group">
-      <label for="email">E-mail</label>
-      <input type="email" class="form-control" id="email" [(ngModel)]="account.email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="password">Senha</label>
-      <input type="password" class="form-control" id="password" [(ngModel)]="account.password" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Criar conta</button>
-  </div>
-</form>
+  </form>
+</div>

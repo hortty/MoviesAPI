@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wFAi7Sz9nDT7ayYIxZV9gvNrwUssfLdhN17cWezmUozpnwNqUkkfK0jz7Kpuk6leV6z1TlICKB3PrCaVIvb70A==",
+  "dgSpecHash": "0+ROvBf9fzrziTUjyy7GNr7Y5BqL24tbtnleY2ETu8AmGz3o7ruR2EFqNcpo9aqy8GvsebDEnXuJDAu5kVeK8w==",
   "success": true,
   "projectFilePath": "C:\\Projetos_git\\MoviesAPI\\Movie\\Movie.Infrastructure\\Movie.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

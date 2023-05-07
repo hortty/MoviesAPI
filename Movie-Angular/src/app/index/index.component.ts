@@ -4,6 +4,8 @@ import { GetFilmDto } from '../dtos/get-film-dto';
 import { FoundFilmDto } from '../dtos/found-film-dto';
 import { Subject, catchError, takeUntil, throwError } from 'rxjs';
 import { GlobalService } from '../services/global-service.service';
+import { ShoppingCartMovieService } from '../services/shopping-cart-movie.service';
+import { CreateShoppingCartMovieDto } from '../dtos/create-shopping-cart-movie-dto';
 
 @Component({
   selector: 'index',
@@ -16,7 +18,7 @@ export class IndexComponent implements OnInit {
   imagemSrc: string[] = [];
   destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private filmService: FilmService, private globalService: GlobalService) {}
+  constructor(private filmService: FilmService, private globalService: GlobalService, private shoppingCartMovieService: ShoppingCartMovieService) {}
 
   ngOnDestroy() {
     this.destroy$.next(true);
@@ -49,6 +51,16 @@ export class IndexComponent implements OnInit {
   }
 
   comprar(film: FoundFilmDto): void {
-    this.globalService.shoppingCartMovies.push(film);
+
+    // if better implemented, shoppingCartId would have relation with ShoppingCart, that would have an user's id
+    const shoppingCartMovieDto: CreateShoppingCartMovieDto = {
+      amount: 1,
+      shoppingCartId: 1,
+      filmId: film.id,
+      price: film.price,
+      name: film.name
+    }
+
+    this.shoppingCartMovieService.create(shoppingCartMovieDto).subscribe(created => console.log(created));
   }
 }

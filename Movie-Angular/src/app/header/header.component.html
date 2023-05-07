@@ -6,18 +6,17 @@
     </button>
     <div class="collapse navbar-collapse navbar-global-itens" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active list-itens" aria-current="page" routerLink="home">Home</a>
+          <a class="nav-link list-itens" aria-current="page" routerLink="home">Home</a>
           <a class="nav-link list-itens" routerLink="shopping">Shopping Cart</a>
+          <a class="nav-link list-itens">Trending</a>
         </div>
 
         <form class="example-form">
           <mat-form-field appearance="outline">
-            <mat-label>Movie:</mat-label>
+            <mat-label>Search:</mat-label>
             <input matInput placeholder="Example: Titanic" [formControl]="movieName">
           </mat-form-field>
         </form>
-
-
 
         <div class="icon-animation" routerLink="login">
             <img src="assets/icone3.png" alt="image-user" class="image-user">

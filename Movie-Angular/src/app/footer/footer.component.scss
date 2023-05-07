@@ -1,15 +1,5 @@
 @import '../../styles.scss';
 
-.footer {
-  background-color: $main-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2.5rem;
-  gap: 2rem;
-}
-
 .icon-list {
   display: flex;
   gap: 1rem;
@@ -20,4 +10,47 @@
   color: $white-color;
   text-decoration: none;
   font-size: large;
+  cursor: pointer;
+}
+
+//
+
+.Contato{
+  display: flex;
+  gap: 5rem;
+  justify-content: space-around;
+  background-color: #111;
+  padding: 8rem;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+}
+
+.meio-contato h3{
+  color: #fff;
+  font-size: 26px;
+  margin-bottom: 1.6rem;
+}
+
+.meio-contato h5{
+  font-size: 20px;
+  font-weight: 600;
+  color: #555;
+}
+
+.meio-contato span{
+  margin-bottom: 20px;
+}
+
+.meio-contato span{
+  display: block;
+  color: #555;
+  font-weight: 600;
+  transition: all .35s ease;
+}
+
+.last-text{
+  text-align: center;
+  background-color: #555;
+  color: #fff;
 }

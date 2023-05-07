@@ -1,11 +1,15 @@
 @import '../../styles.scss';
 
 .image-logo {
-  max-width: 4rem;
-  max-height: 4rem;
+  max-width: 3.5rem;
+  max-height: 3.5rem;
   border: 2px solid rgba(0, 0, 0, 0.486);
   border-radius: 100%;
   margin-right: 2rem;
+}
+
+.container-fluid {
+  max-height: 3rem;
 }
 
 .image-logo:hover {
@@ -16,13 +20,19 @@
   background-color: $main-color;
 }
 
+// padding:rem;
 .list-itens {
   text-decoration: none;
-  color: $white-color !important;
-  padding: 1.4rem;
+  color: $white-color;
   transform: 2ms ease-in;
   position: relative;
+  margin-left: 1rem;
+  padding-bottom: 0.6rem;
   cursor: pointer;
+}
+
+.list-itens:hover {
+  color: rgb(23, 0, 128);
 }
 
 .list-itens:before {
@@ -42,7 +52,7 @@
 
 mat-form-field {
   color: $white-color;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 0px;
   min-width: 35rem;
 }
@@ -122,5 +132,18 @@ mat-form-field {
 @keyframes jump {
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Para telas entre 600px e 959px */
+@media screen and (min-width: 600px) and (max-width: 1100px) {
+  .example-form {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .example-form {
+    display: none;
   }
 }

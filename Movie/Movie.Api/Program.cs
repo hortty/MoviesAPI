@@ -5,12 +5,20 @@ using Movie.Application.Services;
 using Movie.Domain.Interfaces;
 using Movie.Infrastructure.Context;
 using Movie.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using Movie.Application.Validators;
+using FluentValidation;
+using System.ComponentModel.DataAnnotations;
+using Movie.Domain.Models;
+using Movie.Domain.Dtos;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -42,6 +50,13 @@ builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 builder.Services.AddScoped<IShoppingCartMovieRepository, ShoppingCartMovieRepository>();
+
+// Validators
+builder.Services.AddTransient<IValidator<CreateShoppingCartMovieDto>, CreateShoppingCartMovieDtoValidator>();
+builder.Services.AddTransient<IValidator<UpdateShoppingCartMovieDto>, UpdateShoppingCartMovieDtoValidator>();
+builder.Services.AddTransient<IValidator<DeleteShoppingCartMovieDto>, DeleteShoppingCartMovieDtoValidator>();
+builder.Services.AddTransient<IValidator<CreateCustomerDto>, CreateCustomerDtoValidator>();
+
 
 var app = builder.Build();
 

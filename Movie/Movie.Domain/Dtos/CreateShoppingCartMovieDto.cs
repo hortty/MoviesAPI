@@ -15,5 +15,9 @@ namespace Movie.Domain.Dtos
         public long ShoppingCartId { get; set; }
 
         public long FilmId { get; set; }
+
+        public decimal Price { get; set; }
+
+        public string Name { get; set; } = String.Empty;
     }
 }
